@@ -1,17 +1,260 @@
-html{
+body {
   margin: 0;
+  padding: 0;
 }
-.sidebar-container{
-  width: 243px;
-  height: 100vh;
+.app {
+  display: flex;
+  flex-wrap: wrap;
+}
+/**Sidebar style**/
+.sidebar {
+  width: 290px;
+  min-height: 100vh;
   background-color: #13244e;
   padding: 30px 30px 30px 0px;
+  z-index: 99999;
 }
-.text-center{
+.sidebar.open {
+  left: 0;
+}
+.content.open {
+  left: 300px;
+}
+.text-center {
   text-align: center;
 }
-.logo-img{
+.logo-img {
   width: 137px;
   height: 32px;
+  margin-top: -10px;
+  padding-bottom: 20px;
+}
+.list-item {
+  text-decoration: none;
+  list-style-type: none;
+  text-align: left;
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 30px;
+  border-radius: 4px;
+  margin: 20px 0px 20px 10px;
+  cursor: pointer;
+}
+.list-item-active {
+  background-color: #0093dd;
+}
+.icon-img {
+  width: 16px;
+  height: 16px;
+  padding-right: 15px;
+}
+.list-link {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  text-decoration: none;
+}
+.resize-icon {
+  padding-top: 22px;
+  padding-left: 40px;
+}
+
+/**Header style**/
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  box-shadow: 0 7px 64px 0 rgba(19, 36, 78, 0.07);
+  background-color: #ffffff;
+  padding-left: 70px;
+  z-index: -1;
+}
+.resize {
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+.flex {
+  display: flex;
+  flex-wrap: wrap;
   padding-top: 20px;
+}
+.header-flex-1 {
+  width: 50%;
+}
+.header-flex-2 {
+  width: 50%;
+  text-align: right;
+  justify-content: right;
+}
+.bell {
+  width: 35px;
+  height: 35px;
+}
+.notification-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.notification-item {
+  flex-grow: 1;
+  width: 50%;
+}
+.bell-area {
+  width: 60%;
+  float: right;
+  padding-left: 6rem;
+}
+.name-area {
+  width: 20%;
+  float: left;
+  padding-right: 50px;
+  margin-top: -20px;
+}
+.container {
+  position: absolute;
+  padding: 85px 50px 0px 350px;
+  border: 3px solid yellow;
+}
+.content-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.header-1 {
+  flex-grow: 1;
+  width: 50%;
+  margin: auto;
+}
+.header-2 {
+  flex-grow: 1;
+  width: 50%;
+  text-align: right;
+  margin: auto;
+}
+.header-1 p {
+  font-size: 22px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.27;
+  letter-spacing: normal;
+  color: #13244e;
+}
+.header-2 p {
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  color: #000000;
+}
+.card-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.card-flex-item-1 {
+  flex-grow: 1;
+  width: 62%;
+  padding-right: 25px;
+}
+.card-flex-item-2 {
+  flex-grow: 1;
+  width: 30%;
+}
+.capex{
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 7px 64px 0 rgba(19, 36, 78, 0.07);
+  background-color: #ffffff;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+.opex{
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 7px 64px 0 rgba(19, 36, 78, 0.07);
+  background-color: #ffffff;
+  padding: 10px;
+}
+.pending-container{
+  border-radius: 6px;
+  box-shadow: 0 7px 64px 0 rgba(19, 36, 78, 0.07);
+  background-color: #ffffff;
+  margin-bottom: 20px;
+}
+.budget-name{
+ font-size: 17px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  color: #13244e;
+  margin: auto;
+}
+.budget-icon{
+  margin-right: 10px;
+  width: 32px;
+  height: 32px;
+}
+.budget-count{
+  border-radius: 8px;
+  background-color: #f0f3f9;
+}
+.budget-count p{
+   font-size: 37px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.59;
+  letter-spacing: normal;
+  color: #000000;
+    padding: 25px 0px 25px 0px
+}
+.card-border{
+  margin-top: 5px;
+  border: 2px dotted #f0f3f7;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  padding: 10px 13px;
+}
+.budget-count-wrapper{
+  padding: 10px 13px;
+}
+.capex-icon{
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+}
+.capex-name{
+    width: 30%;
+  margin: auto;
+}
+.capex-price{
+  width: 20%;
+  margin: auto;
+  border-radius: 6px;
+  background-color: rgba(81, 44, 98, 0.2);
+  padding: 8px;
+  font-size: 21px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.05;
+  letter-spacing: normal;
+  color: #512c62;
+  margin-right: 55px;
+}
+.capex-dropdown{
+  width: 30%;
+  float: right;
+  padding-left: 2rem;
 }
