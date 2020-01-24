@@ -7,8 +7,16 @@ import resize from "./resize.png";
 
 export default class Sidebar extends Component {
   state = {
-    isOpen: true
+    isOpen: true,
+    width: 0,
+    height: 0
   };
+
+  componentDidMount() {
+    if (window.innerWidth === 425) {
+      this.setState({ isOpen: false });
+    }
+  }
 
   renderSidebar() {
     if (!this.state.isOpen) {
@@ -46,14 +54,17 @@ export default class Sidebar extends Component {
   }
 
   toggleSidebar = () => {
-      this.setState(prevState => ({ isOpen: !prevState.isOpen }))
-      
+    this.setState(prevState => ({ isOpen: !prevState.isOpen }));
   };
 
   render() {
     const SidebarIcon = ({ handleClick, isOpen }) => {
       return (
-        <span onClick={handleClick} className="resize-icon" style={{zIndex: 99999999999}}>
+        <span
+          onClick={handleClick}
+          className="resize-icon"
+          style={{ zIndex: 99999999999 }}
+        >
           {isOpen ? (
             <img src={resize} alt="resize.png" className="resize" />
           ) : (

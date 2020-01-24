@@ -35,15 +35,16 @@ export default class Dropdown extends Component {
     }
   ];
 
+  toggleItem(item){
+      console.log(item)
+      const pickedItem = this.listItems.filter(itemFromArray => item === itemFromArray.id)
+      this.setState({ title: pickedItem[0].title });
+  }
+
   render() {
     const { title } = this.state;
     return (
-      <div
-        className="dropdown capex-dropdown"
-        style={{
-          background: "rgba(77, 213, 153, 0.2);"
-        }}
-      >
+      <div className="dropdown capex-dropdown">
         <div className="button" onClick={this.showDropdownMenu}>
           {title}
         </div>
@@ -51,7 +52,7 @@ export default class Dropdown extends Component {
         {this.state.displayMenu ? (
           <ul>
             {this.listItems.map(item => (
-              <li key={item.id}>
+              <li key={item.id} onClick={() => this.toggleItem(item.id)}>
                 <a className="active" href="#Create Page">
                   {item.title}
                 </a>

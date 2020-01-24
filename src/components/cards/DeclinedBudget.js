@@ -3,7 +3,7 @@ import declined from '../assets/declined.png'
 
 export default function DeclinedBudget() {
     return (
-        <div className="pending-container">
+        <div className="pending-container p-c-override">
             <div className="card-flex card-border">
                 <img src={declined} alt="declined.png" className="budget-icon" />
                 <p className="budget-name">Declined Budget Reassignment Status</p>
